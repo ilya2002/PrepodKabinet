@@ -1,11 +1,11 @@
 # vue
 
-## Project setup
+## Установка
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск
 ```
 npm run serve
 ```
