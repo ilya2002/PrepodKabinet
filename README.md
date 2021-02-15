@@ -13,7 +13,7 @@ npm run serve
 
 ### Данные для входа в кабинет
 ```
- Email: test@test.ru
+ Email: test@test.ru ИЛИ 123@123.123 
 ```
 ```
  Password: 123456
