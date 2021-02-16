@@ -1,11 +1,23 @@
-# vue
+# Личный кабинет
 
-## Project setup
+## Установка
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск
 ```
 npm run serve
 ```
+
+
+### Данные для входа в кабинет
+ Email:
+
+ ```test@test.ru ``` ИЛИ ```123@123.123 ```
+
+
+Password:
+```123456```
+ 
+
