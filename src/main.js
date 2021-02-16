@@ -5,7 +5,7 @@ import router from './router'
 import store from './store'
 import dateFilter from '@/filters/date.filter'
 import messagePlugin from '@/utils/message.plugin'
-import Loader from '@/components/app/Loader'
+import Loader from '@/components/Loader'
 import './registerServiceWorker'
 import 'materialize-css/dist/js/materialize.min'
 

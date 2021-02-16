@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import firebase from '@firebase/app'
-
+import firebase from 'firebase/app'
 Vue.use(Router)
-
 const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -52,7 +50,6 @@ const router = new Router({
     }
   ]
 })
-
 router.beforeEach((to, from, next) => {
   const currentUser = firebase.auth().currentUser
   const requireAuth = to.matched.some(record => record.meta.auth)

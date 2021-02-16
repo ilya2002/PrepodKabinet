@@ -14,12 +14,12 @@
           v-model="title"
           :class="{invalid: $v.title.$dirty && !$v.title.required}"
         >
-        <label for="title">Описание</label>
+        <label for="title">Заголовок</label>
         <span
           v-if="$v.title.$dirty && !$v.title.required"
           class="helper-text invalid"
         >
-            Введите описание
+            Введите заголовок
           </span>
       </div>
 
