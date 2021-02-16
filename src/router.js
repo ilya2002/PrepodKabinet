@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import firebase from 'firebase/app'
+import firebase from '@firebase/app'
 Vue.use(Router)
 const router = new Router({
   mode: 'history',
