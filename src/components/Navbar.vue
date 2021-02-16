@@ -10,7 +10,6 @@
 
       <ul class="right hide-on-small-and-down">
         <li>
-
           <a
               class="dropdown-trigger black-text"
               href="#"
@@ -30,7 +29,6 @@
     </div>
   </nav>
 </template>
-
 
 <script>
 export default {

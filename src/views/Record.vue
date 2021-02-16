@@ -19,7 +19,7 @@
           v-if="$v.title.$dirty && !$v.title.required"
           class="helper-text invalid"
         >
-            Введите заголовок
+            Нужно ввести заголовок
           </span>
       </div>
 
@@ -35,7 +35,7 @@
           v-if="$v.description.$dirty && !$v.description.required"
           class="helper-text invalid"
         >
-            Введите описание
+            Нужно ввести описание
           </span>
       </div>
 
