@@ -19,8 +19,8 @@ export default {
   data: () => ({
     links: [
       {title: 'Главная', url: '/', exact: true},
-      {title: 'Мои курсы', url: '/history'},
-      {title: 'Расписание', url: '/planning'},
+      {title: 'Мои курсы', url: '/mykursy'},
+      {title: 'Расписание', url: '/schedule'},
       {title: 'Новая запись', url: '/record'},
       {title: 'Добавление пользователя', url: '/register'}
     ]

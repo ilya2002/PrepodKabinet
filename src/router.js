@@ -33,16 +33,16 @@ const router = new Router({
       component: () => import('./views/Record.vue')
     },
     {
-      path: '/history',
-      name: 'history',
+      path: '/mykursy',
+      name: 'mykursy',
       meta: {layout: 'main', auth: true},
-      component: () => import('./views/History.vue')
+      component: () => import('./views/Mykursy.vue')
     },
     {
-      path: '/planning',
-      name: 'planning',
+      path: '/schedule',
+      name: 'schedule',
       meta: {layout: 'main', auth: true},
-      component: () => import('./views/Planning.vue')
+      component: () => import('./views/Schedule.vue')
     },
     {
       path: '/profile',
@@ -63,6 +63,4 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
-
-
 export default router
