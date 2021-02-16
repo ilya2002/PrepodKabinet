@@ -16,7 +16,7 @@
               data-target="dropdown"
               ref="dropdown"
           >
-            <img style="position: absolute;width: 3em; margin: 1em 0 0 -4em; border-radius: 50% " src="../../assets/img/photo.png">
+            <img style="position: absolute;width: 3em; margin: 1em 0 0 -4em; border-radius: 50% " src="../assets/img/photo.png">
             <router-link to="/profile" class="black-text">
               {{name}} {{secondName}}
             </router-link>
