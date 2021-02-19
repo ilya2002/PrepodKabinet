@@ -21,6 +21,7 @@ export default new Vuex.Store({
   getters: {
     error: s => s.error
   },
+  // подкючения всех модулей бд
   modules: {
     auth, info, record,
   }

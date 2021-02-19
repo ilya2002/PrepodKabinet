@@ -2,6 +2,7 @@
   <form class="card auth-card" @submit.prevent="submitHandler">
     <div class="card-content">
       <span class="card-title">Регистрация нового пользователя</span>
+<!--      поле ввода email и проверка его по критериям-->
       <div class="input-field">
         <input
             id="email"
@@ -10,6 +11,7 @@
             :class="{invalid: ($v.email.$dirty && !$v.email.required) || ($v.email.$dirty && !$v.email.email)}"
         >
         <label for="email">Email</label>
+        <!--        Критерии для email-->
         <small
             class="helper-text invalid"
             v-if="$v.email.$dirty && !$v.email.required"
@@ -19,6 +21,7 @@
             v-else-if="$v.email.$dirty && !$v.email.email"
         >Введите корретный Email</small>
       </div>
+      <!--      поле ввода email и проверка его по критериям-->
       <div class="input-field">
         <input
             id="password"
@@ -27,6 +30,7 @@
             :class="{invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength)}"
         >
         <label for="password">Пароль</label>
+<!--        Критерии для пароля-->
         <small
             class="helper-text invalid"
             v-if="$v.password.$dirty && !$v.password.required"
@@ -40,6 +44,7 @@
           Пароль должен быть {{$v.password.$params.minLength.min}} символов. Сейчас он {{password.length}}
         </small>
       </div>
+      <!--      поле ввода имени и проверка его по критериям-->
       <div class="input-field">
         <input
             id="name"
@@ -48,6 +53,7 @@
             :class="{invalid: $v.name.$dirty && !$v.name.required}"
         >
         <label for="name">Имя</label>
+        <!--        Критерии для имени-->
         <small
             class="helper-text invalid"
             v-if="$v.name.$dirty && !$v.name.required"
@@ -55,6 +61,7 @@
           Введите ваше имя
         </small>
       </div>
+      <!--      поле ввода фамилии и проверка его по критериям-->
       <div class="input-field">
         <input
             id="secondName"
@@ -63,6 +70,7 @@
             :class="{invalid: $v.secondName.$dirty && !$v.secondName.required}"
         >
         <label for="name">Фамилия</label>
+        <!--        Критерии для фамилии-->
         <small
             class="helper-text invalid"
             v-if="$v.secondName.$dirty && !$v.secondName.required"
@@ -71,6 +79,7 @@
         </small>
       </div>
     </div>
+<!--   кнопка -->
     <div class="card-action">
       <div>
         <button
@@ -96,6 +105,7 @@ export default {
     name: '',
     secondName: ''
   }),
+  // валидация
   validations: {
     email: {email, required},
     password: {required, minLength: minLength(6)},
@@ -108,14 +118,14 @@ export default {
         this.$v.$touch()
         return
       }
-
+      // создание данных
       const formData = {
         email: this.email,
         password: this.password,
         name: this.name,
         secondName: this.secondName
       }
-
+      // переход на главную страницу при удачной регистрации
       try {
         await this.$store.dispatch('register', formData)
         this.$router.push('/')

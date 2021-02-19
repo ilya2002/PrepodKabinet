@@ -65,10 +65,12 @@ export default {
     email: '',
     password: ''
   }),
+  // валидация
   validations: {
     email: {email, required},
     password: {required, minLength: minLength(6)}
   },
+  // Вывод ссобщений при неудаче
   mounted() {
     if (messages[this.$route.query.message]) {
       this.$message(messages[this.$route.query.message])
@@ -80,11 +82,12 @@ export default {
         this.$v.$touch()
         return
       }
+      // передача данных в бд
       const formData = {
         email: this.email,
         password: this.password
       }
-
+      // переход на главную страницу при удачной валидации
       try {
         await this.$store.dispatch('login', formData)
         this.$router.push('/')

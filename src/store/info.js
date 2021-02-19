@@ -13,6 +13,7 @@ export default {
     }
   },
   actions: {
+    // экшен для редактирования информации пользователя
     async updateInfo({dispatch, commit, getters}, toUpdate) {
       try {
         const uid = await dispatch('getUid')

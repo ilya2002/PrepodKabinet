@@ -3,7 +3,7 @@
     <div class="page-title">
       <h3>Данные пользователя</h3>
     </div>
-
+<!-- поля для заполении формы измения данных пользователя-->
     <form class="form" @submit.prevent="submitHandler">
       <div class="input-field">
         <input
@@ -36,40 +36,37 @@ import { required } from 'vuelidate/lib/validators'
 export default {
   data: () => ({
     name: '',
-    isRuLocale: true
+    secondName: ''
   }),
   validations: {
     name: { required },
     secondName: { required }
 
-  },
+  },  // вывод актуальной информации пользователя
   mounted() {
     this.name = this.info.name
     this.secondName = this.info.secondName
-    this.secondName = this.info.secondName
-    this.isRuLocale = this.info.locale === 'ru-RU'
-    setTimeout(() => {
-      M.updateTextFields()
-    })
   },
   computed: {
     ...mapGetters(['info'])
   },
   methods: {
+    // замена старой информации на новую
     ...mapActions(['updateInfo']),
     async submitHandler() {
       if (this.$v.$invalid) {
         this.$v.$touch()
         return
       }
-
       try {
+        this.$message('Данные пользователя изменены')
         await this.updateInfo({
           name: this.name,
           secondName: this.secondName,
-          locale: this.isRuLocale ? 'ru-RU' : 'en-US'
         })
-      } catch (e) {}
+      }
+      // Вывод ошибки при невозможности изменения данных
+      catch (e) {}
     }
   }
 }

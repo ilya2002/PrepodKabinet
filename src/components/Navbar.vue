@@ -17,6 +17,7 @@
               ref="dropdown"
           >
             <img style="position: absolute;width: 3em; margin: 1em 0 0 -4em; border-radius: 50% " src="../assets/img/photo.png">
+<!-- Вывод данных пользователя            -->
             <router-link to="/profile" class="black-text">
               {{name}} {{secondName}}
             </router-link>
@@ -35,14 +36,16 @@ export default {
   data: () => ({
     date: new Date(),
     interval: null,
-    dropdown: null,
   }),
   methods: {
+    // Осуществление выхода
     logout: async function () {
       await this.$store.dispatch('logout')
+      // Вывод сообщения о выходе
       this.$router.push('/login?message=logout')
     }
   },
+  // Вывод данных из бд
   computed: {
     name() {
       return this.$store.getters.info.name
@@ -52,18 +55,10 @@ export default {
     }
   },
   mounted() {
+    // при изменении даты на новое, замена его на странице
     this.interval = setInterval(() => {
       this.date = new Date()
     }, 1000)
-    this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
-      constrainWidth: false
-    })
-  },
-  beforeDestroy() {
-    clearInterval(this.interval)
-    if (this.dropdown && this.dropdown.destroy) {
-      this.dropdown.destroy()
-    }
   }
 }
 </script>

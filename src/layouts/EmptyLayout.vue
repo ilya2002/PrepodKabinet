@@ -1,5 +1,6 @@
 <template>
   <div class="grey darken-1 empty-layout">
+<!--    вывод страницы указаной в route-->
     <router-view />
   </div>
 </template>
@@ -13,6 +14,7 @@ export default {
       return this.$store.getters.error
     }
   },
+  // При непредвиденной ошибки на странице выводится данное сообщение
   watch: {
     error(fbError) {
       this.$error(messages[fbError.code] || 'Что-то пошло не так')

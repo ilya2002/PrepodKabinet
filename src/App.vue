@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+<!--    Вывод layout's-->
     <component :is="layout">
       <router-view/>
     </component>
@@ -10,6 +11,7 @@
 import EmptyLayout from '@/layouts/EmptyLayout'
 import MainLayout from '@/layouts/MainLayout'
 export default {
+  // установка layout's
   computed: {
     layout() {
       return (this.$route.meta.layout || 'empty') + '-layout'
@@ -21,8 +23,8 @@ export default {
 }
 </script>
 
-
-<style lang="scss">
+<!-- Подключение стилей к проекту -->
+<style lang="css">
 @import '~materialize-css/dist/css/materialize.min.css';
 @import 'assets/index.css';
 </style>

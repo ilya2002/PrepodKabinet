@@ -19,7 +19,7 @@ Vue.use(messagePlugin)
 Vue.use(Vuelidate)
 Vue.filter('date', dateFilter)
 Vue.component('Loader', Loader)
-
+// Подключение БД
 firebase.initializeApp({
   apiKey: "AIzaSyDTf7zyB6m6TJocVVBpt_4nPHh_wNNXf4g",
   authDomain: "teacher-office.firebaseapp.com",
@@ -33,7 +33,7 @@ firebase.initializeApp({
 })
 
 let app
-
+// аутификация
 firebase.auth().onAuthStateChanged(() => {
   if (!app) {
     app = new Vue({

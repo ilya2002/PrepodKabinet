@@ -5,6 +5,7 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+  // Подкючение страниц Vue проекту для создания динамических переходов
   routes: [
     {
       path: '/login',
@@ -50,6 +51,7 @@ const router = new Router({
     }
   ]
 })
+//    Проверка авторизации пользователя
 router.beforeEach((to, from, next) => {
   const currentUser = firebase.auth().currentUser
   const requireAuth = to.matched.some(record => record.meta.auth)
